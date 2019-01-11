@@ -1,4 +1,5 @@
 // https://docs.cypress.io/api/introduction/api.html
+// can use it.only to run only a single test;
 
 describe("My First Test", () => {
   it("Visits the app root url", () => {
@@ -19,5 +20,14 @@ describe("Example of Failed Test", () => {
 describe("Example of Passed Test", () => {
   it("Passes a sample test", () => {
     expect(true).to.equal(true);
+  });
+});
+
+xdescribe("Has an h1", () => {
+  it("opens debugger on root url", () => {
+    cy.visit("/");
+    cy.get("h1").then(() => {
+      debugger;
+    });
   });
 });
